@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build-job:
+  stage: build
+  image: golang:1.21
+  script:
+    - go mod tidy
+    - go build -o app
+  artifacts:
+    paths:
+      - app
